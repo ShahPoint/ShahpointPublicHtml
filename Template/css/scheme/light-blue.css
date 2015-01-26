@@ -64,3 +64,74 @@ footer.footer {
 .testimonial-list .testimonial-item a:hover ~ .testi-link {
   background: rgba(76, 221, 243, 0.8);
 }
+.body-shadow{
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	background:hsla(0,0%,0%,0.5);
+	position:fixed;
+	z-index:9999999;
+	display:none;
+}
+.message-state{
+	width:30%;
+	box-sizing:border-box;
+	padding:10px;
+	border-radius:3px;
+	top:50%;
+	left:50%;
+	-webkit-transform:translate(-50%, -50%);
+	transform:translate(-50%, -50%);
+	position:relative;
+	background:#fff;
+	color:#000;
+	box-shadow:0 0 5px #000;
+}
+.end-button{
+	position:absolute;
+	top:-25px;
+	right:-25px;
+	cursor:pointer;
+}
+.message-thanks{
+	font-size:1.5em;
+	margin-bottom:1em;
+}
+.side-tab{
+	position:fixed;
+	box-sizing:border-box;
+	padding:2px 5px;
+	right:0;
+	top:50%;
+	background:#4CDDF3;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+	border-bottom:solid 1px #1b6b91;
+	z-index:99999;
+	cursor:pointer;
+}
+.side-tab-txt{
+	color:#fff;
+	float:right;
+	font-weight:bold;
+	padding:2px 5px 0 4px;
+}
+@media screen and (max-width:900px){
+	.side-tab-txt{
+		display:none;
+	}
+}
+.calendar-tab{
+	background:#fff;
+	position:fixed;
+	right:-30%;
+	top:0;
+	height:100%;
+	width:30%;
+	box-sizing:border-box;
+	padding:10px 20px 0;
+	text-align:center;
+	box-shadow:0 0 5px #000;
+	z-index:9999;
+}

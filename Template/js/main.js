@@ -120,7 +120,51 @@ dp(document).ready(function() {
 
         });
     }
-
+	
+	//Contact Form
+	function sentMessageAlert(result, name){
+		dp('body').append('<div class="body-shadow"><div class="message-state"><img src="Template/images/end-button.png" class="end-button"></div></div>');
+		dp('.message-state').append('<div class="message-thanks">Thank You ' + name +',</div><div class="message-results">' + result + '</div>');		
+		dp('.body-shadow').fadeIn(300);
+		
+		
+		dp('body').css('overflow', 'hidden');
+		dp('body').delegate('.end-button', 'click', function(){
+			dp('.body-shadow').fadeOut(300, function(){dp(this).remove();})
+			dp('body').css('overflow', 'auto');
+		});
+	}
+	dp("#emailContact").submit(function(){
+		var info = dp(this).serialize();
+		var name = dp('input[name=name]').val();
+		dp('#submit').text('Sending...');
+		dp.post('template/php/sendemail.php', info, function(result){
+			dp('#submit').text('Submit');
+			sentMessageAlert(result, name);
+			dp('#emailContact input').each(function(){
+				dp(this).val('');
+			});
+			dp('#emailContact textarea').val('');
+		});
+		return false;
+	})
+	
+	//Call to Action slide out
+	var side = 0,
+	cal = '30%';
+	dp('.side-tab').click(function(){		
+		if(side == '-30%' && cal == 0){
+			dp('.calendar-tab').animate({right: side}, 300);
+			dp(this).animate({right : cal}, 300);
+			side = 0;
+			cal = '30%';
+		}else{
+			dp('.calendar-tab').animate({right: side}, 300);
+			dp(this).animate({right : cal}, 300);
+			side = '-30%';
+			cal = 0;
+		}
+	});
 });
 /*var container = document.querySelector('#portfoliomasonry');
 var msnry = new Masonry(container, {
