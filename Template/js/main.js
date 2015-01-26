@@ -154,17 +154,36 @@ dp(document).ready(function() {
 	cal = '30%';
 	dp('.side-tab').click(function(){		
 		if(side == '-30%' && cal == 0){
-			dp('.calendar-tab').animate({right: side}, 300);
+			dp('.calendar-tab').animate({right: side},{
+				duration: 300,
+				step: function(){
+					dp(this).removeClass('calendar-tab-shd');
+				}
+			});
 			dp(this).animate({right : cal}, 300);
 			side = 0;
 			cal = '30%';
 		}else{
 			dp('.calendar-tab').animate({right: side}, 300);
 			dp(this).animate({right : cal}, 300);
+			dp('.calendar-tab').addClass('calendar-tab-shd');
 			side = '-30%';
 			cal = 0;
 		}
 	});
+	dp(window).scroll(function(){
+		if(side == '-30%' && cal == 0){
+			dp('.calendar-tab').animate({right: side},{
+				duration: 300,
+				step: function(){
+					dp(this).removeClass('calendar-tab-shd');
+				}
+			});
+			dp('.side-tab').animate({right : cal}, 300);
+			side = 0;
+			cal = '30%';
+		}
+	})
 });
 /*var container = document.querySelector('#portfoliomasonry');
 var msnry = new Masonry(container, {

@@ -132,6 +132,8 @@ footer.footer {
 	box-sizing:border-box;
 	padding:10px 20px 0;
 	text-align:center;
-	box-shadow:0 0 5px #000;
 	z-index:9999;
+}
+.calendar-tab-shd{
+	box-shadow:0 0 5px #000;
 }
