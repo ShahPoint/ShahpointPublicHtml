@@ -138,7 +138,7 @@ dp(document).ready(function() {
 		var info = dp(this).serialize();
 		var name = dp('input[name=name]').val();
 		dp('#submit').text('Sending...');
-		dp.post('template/php/sendemail.php', info, function(result){
+		dp.post('Template/php/sendemail.php', info, function(result){
 			dp('#submit').text('Submit');
 			sentMessageAlert(result, name);
 			dp('#emailContact input').each(function(){
