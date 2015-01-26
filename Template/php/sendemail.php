@@ -1,6 +1,6 @@
 <?php 
 $mailto = 'jameset1024@gmail.com';
-
+$subject = 'Website Contact Form';
 function cleaner($value){
 	$badstuff = array('to:', 'cc:', 'bss:', 'content-type:', 'mime-version:', 'multipart-mixed:', 'content-transfer-encoding:');
 	
@@ -19,7 +19,7 @@ $cleaned = array_map('cleaner', $_POST);
 		
 		$email_message = "Name: " . $cleaned['name'] . "\n\n" . $cleaned['message'];
 		$name = $cleaned['name'];
-		if(mail($mailto, 'Website Contact', $email_message, "From: \"$name\" <".$cleaned['email'].">\nReply-To: \"".ucwords($cleaned['name'])."\" <".$cleaned['email'].">")){
+		if(mail($mailto, $subject, $email_message, "From: \"$name\" <".$cleaned['email'].">\nReply-To: \"".ucwords($cleaned['name'])."\" <".$cleaned['email'].">")){
 				
 		echo ' We have received your message, and we will repond to your message within 24 hours.';
 		
