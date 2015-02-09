@@ -150,10 +150,14 @@ dp(document).ready(function() {
 	})
 	
 	//Call to Action slide out
-	var side = 0,
-	cal = '30%';
+	
+	var minusDefault = '-40%',
+	positiveDefault = '40%'
+	side = 0, cal = '40%';		
+	
+	
 	dp('.side-tab').click(function(){		
-		if(side == '-30%' && cal == 0){
+		if(side == minusDefault && cal == 0){
 			dp('.calendar-tab').animate({right: side},{
 				duration: 300,
 				step: function(){
@@ -162,17 +166,17 @@ dp(document).ready(function() {
 			});
 			dp(this).animate({right : cal}, 300);
 			side = 0;
-			cal = '30%';
+			cal = positiveDefault;
 		}else{
 			dp('.calendar-tab').animate({right: side}, 300);
 			dp(this).animate({right : cal}, 300);
 			dp('.calendar-tab').addClass('calendar-tab-shd');
-			side = '-30%';
+			side = minusDefault;
 			cal = 0;
 		}
 	});
 	dp(window).scroll(function(){
-		if(side == '-30%' && cal == 0){
+		if(side == minusDefault && cal == 0){
 			dp('.calendar-tab').animate({right: side},{
 				duration: 300,
 				step: function(){
@@ -181,7 +185,7 @@ dp(document).ready(function() {
 			});
 			dp('.side-tab').animate({right : cal}, 300);
 			side = 0;
-			cal = '30%';
+			cal = positiveDefault;
 		}
 	})
 });

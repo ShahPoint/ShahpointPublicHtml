@@ -115,20 +115,15 @@ footer.footer {
 	color:#fff;
 	float:right;
 	font-weight:bold;
-	padding:2px 5px 0 4px;
-}
-@media screen and (max-width:900px){
-	.side-tab-txt{
-		display:none;
-	}
+	padding:4px 5px 0 4px;
 }
 .calendar-tab{
 	background:#fff;
 	position:fixed;
-	right:-30%;
+	right:-40%;
 	top:0;
 	height:100%;
-	width:30%;
+	width:40%;
 	box-sizing:border-box;
 	padding:10px 20px 0;
 	text-align:center;
@@ -136,4 +131,28 @@ footer.footer {
 }
 .calendar-tab-shd{
 	box-shadow:0 0 5px #000;
+}
+@media screen and (max-width:900px){
+	.side-tab-txt{
+		display:none;
+	}
+}
+
+.small-business-info{
+	margin:0;
+	padding:0;
+	list-style:inherit;
+}
+.og-expanded{
+	overflow:inherit;
+}
+.og-details{
+	overflow:auto;
+}
+.og-title p{
+	font-size:0.9em;
+}
+.small-business-info li{
+	display:inherit;
+	height:inherit;
 }
