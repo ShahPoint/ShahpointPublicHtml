@@ -132,6 +132,9 @@ footer.footer {
 .calendar-tab-shd{
 	box-shadow:0 0 5px #000;
 }
+.calendar-tab img{
+	max-width:90%;
+}
 @media screen and (max-width:900px){
 	.side-tab-txt{
 		display:none;
