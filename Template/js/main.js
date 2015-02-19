@@ -124,6 +124,10 @@ dp(document).ready(function() {
 	//Contact Form
 	function sentMessageAlert(result, name){
 		dp('body').append('<div class="body-shadow"><div class="message-state"><img src="Template/images/end-button.png" class="end-button"></div></div>');
+		var successMessage;
+		if(result == "success"){
+			successMessage = "Your message was sent successfully and we will respond to your message within 24 hours.";
+		}
 		dp('.message-state').append('<div class="message-thanks">Thank You ' + name +',</div><div class="message-results">' + result + '</div>');		
 		dp('.body-shadow').fadeIn(300);
 		
