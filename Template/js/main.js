@@ -133,10 +133,7 @@ dp(document).ready(function() {
 			dp('.body-shadow').fadeOut(300, function(){dp(this).remove();})
 			dp('body').css('overflow', 'auto');
 		});
-	}
-	
-	
-	
+	}	
 
 	
 	
@@ -155,6 +152,7 @@ dp(document).ready(function() {
 			crossDomain:true,
 			data : info, 
 			success : function(result){ 
+				dp('#submit').text('SUBMIT');
 				$('#contact-name').val('');
 				$('#contact-email').val('');
 				$('#contact-message').val('');
