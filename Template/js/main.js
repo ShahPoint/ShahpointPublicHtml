@@ -180,9 +180,14 @@ dp(document).ready(function() {
 		minusDefault = '-100%';
 		positiveDefault = '100%';
 		cal = '100%';
+	}else{
+		minusDefault = '-40%',
+		positiveDefault = '40%',
+		side = 0, cal = '40%';
 	}
 	dp(window).resize(function(e) {
 		windowWidth = $(window).width();
+		console.log(windowWidth);
         if(windowWidth <= 650){
 			minusDefault = '-100%';
 			positiveDefault = '100%';
