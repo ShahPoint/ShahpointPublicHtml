@@ -174,7 +174,20 @@ dp(document).ready(function() {
 	
 	var minusDefault = '-40%',
 	positiveDefault = '40%'
-	side = 0, cal = '40%';		
+	side = 0, cal = '40%', windowWidth;
+	
+	if(windowWidth = 650){
+		minusDefault = '-100%';
+		positiveDefault = '100%';
+		cal = '100%';
+	}
+	dp(window).resize(function(e) {
+        if(windowWidth = 650){
+			minusDefault = '-100%';
+			positiveDefault = '100%';
+			cal = '100%';
+		}
+    });
 	
 	
 	dp('.side-tab').click(function(){		

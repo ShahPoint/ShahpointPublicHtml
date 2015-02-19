@@ -140,6 +140,12 @@ footer.footer {
 		display:none;
 	}
 }
+@media screen and (max-width:650px){
+	.calendar-tab{
+		width:100%;
+		right:-100%;
+	}
+}
 
 .small-business-info{
 	margin:0;
