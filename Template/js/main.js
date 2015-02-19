@@ -173,7 +173,7 @@ dp(document).ready(function() {
 	//Call to Action slide out
 	
 	var minusDefault = '-40%',
-	positiveDefault = '40%'
+	positiveDefault = '40%',
 	side = 0, cal = '40%', windowWidth;
 	
 	if(windowWidth <= 650){
