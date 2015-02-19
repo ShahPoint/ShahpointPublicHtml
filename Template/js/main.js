@@ -196,7 +196,11 @@ dp(document).ready(function() {
 			cal = '100%';
 			dp('.calendar-tab').css('right', minusDefault);
 			dp('.calendar-tab').append('<div class="exit-image"></div>');
-		}
+		}else{
+		minusDefault = '-40%',
+		positiveDefault = '40%',
+		side = 0, cal = '40%';
+	}
     });
 	
 	dp('body').delegate('.exit-image', 'click', function(){
