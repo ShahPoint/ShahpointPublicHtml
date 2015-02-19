@@ -128,7 +128,7 @@ dp(document).ready(function() {
 		if(result == "success"){
 			successMessage = "Your message was sent successfully and we will respond to your message within 24 hours.";
 		}
-		dp('.message-state').append('<div class="message-thanks">Thank You ' + name +',</div><div class="message-results">' + result + '</div>');		
+		dp('.message-state').append('<div class="message-thanks">Thank You ' + name +',</div><div class="message-results">' + successMessage + '</div>');		
 		dp('.body-shadow').fadeIn(300);
 		
 		
