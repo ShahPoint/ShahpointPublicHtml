@@ -200,6 +200,7 @@ dp(document).ready(function() {
 		minusDefault = '-40%',
 		positiveDefault = '40%',
 		side = 0, cal = '40%';
+		dp('.exit-image').remove();
 	}
     });
 	
