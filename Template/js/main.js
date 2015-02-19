@@ -180,6 +180,7 @@ dp(document).ready(function() {
 		minusDefault = '-100%';
 		positiveDefault = '100%';
 		cal = '100%';
+		dp('.calendar-tab').css('right', minusDefault);
 	}else{
 		minusDefault = '-40%',
 		positiveDefault = '40%',
