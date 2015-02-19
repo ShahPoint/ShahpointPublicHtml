@@ -134,18 +134,37 @@ dp(document).ready(function() {
 			dp('body').css('overflow', 'auto');
 		});
 	}
+	
+	
+	
+
+	
+	
+	
+	
 	dp("#emailContact").submit(function(){
 		var info = dp(this).serialize();
 		var name = dp('input[name=name]').val();
 		dp('#submit').text('Sending...');
-		dp.post('Template/php/sendemail.php', info, function(result){
-			dp('#submit').text('Submit');
-			sentMessageAlert(result, name);
-			dp('#emailContact input').each(function(){
-				dp(this).val('');
-			});
-			dp('#emailContact textarea').val('');
-		});
+		
+		
+		dp.ajax({
+			url : 'http://www.brightthoughtdesign.com/access/sendemail.php', 
+			dataType:"text",
+			type: 'POST',
+			crossDomain:true,
+			data : info, 
+			success : function(result){ 
+				$('#contact-name').val('');
+				$('#contact-email').val('');
+				$('#contact-message').val('');
+				sentMessageAlert(result, name);
+			},
+			error : function(result){
+				$('#error').fadeIn(300).delay(10000).fadeOut(300);
+			}
+		});	
+		
 		return false;
 	})
 	
