@@ -194,6 +194,8 @@ dp(document).ready(function() {
 			minusDefault = '-100%';
 			positiveDefault = '100%';
 			cal = '100%';
+			dp('.calendar-tab').css('right', minusDefault);
+			dp('.calendar-tab').append('<div class="exit-image"></div>');
 		}
     });
 	
