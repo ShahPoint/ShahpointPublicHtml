@@ -174,7 +174,7 @@ dp(document).ready(function() {
 	
 	var minusDefault = '-40%',
 	positiveDefault = '40%',
-	side = 0, cal = '40%', windowWidth;
+	side = 0, cal = '40%', windowWidth = $(window).width();
 	
 	if(windowWidth <= 650){
 		minusDefault = '-100%';
@@ -182,6 +182,7 @@ dp(document).ready(function() {
 		cal = '100%';
 	}
 	dp(window).resize(function(e) {
+		windowWidth = $(window).width();
         if(windowWidth <= 650){
 			minusDefault = '-100%';
 			positiveDefault = '100%';
