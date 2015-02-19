@@ -181,6 +181,7 @@ dp(document).ready(function() {
 		positiveDefault = '100%';
 		cal = '100%';
 		dp('.calendar-tab').css('right', minusDefault);
+		dp('.calendar-tab').append('<div class="exit-image"></div>');
 	}else{
 		minusDefault = '-40%',
 		positiveDefault = '40%',
@@ -196,7 +197,17 @@ dp(document).ready(function() {
 		}
     });
 	
-	
+	dp('body').delegate('.exit-image', 'click', function(){
+		dp('.calendar-tab').animate({right: side},{
+				duration: 300,
+				step: function(){
+					dp(this).removeClass('calendar-tab-shd');
+				}
+			});
+			dp('.side-tab').animate({right : cal}, 300);
+			side = 0;
+			cal = positiveDefault;
+	});
 	dp('.side-tab').click(function(){		
 		if(side == minusDefault && cal == 0){
 			dp('.calendar-tab').animate({right: side},{

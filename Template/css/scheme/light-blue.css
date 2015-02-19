@@ -129,6 +129,15 @@ footer.footer {
 	text-align:center;
 	z-index:9999;
 }
+.exit-image{
+	background:url(../../images/exit-image.png) no-repeat center center;
+	width:25px;
+	height:25px;
+	position:absolute;
+	top:0;
+	right:0;
+	cursor:pointer;
+}
 .calendar-tab-shd{
 	box-shadow:0 0 5px #000;
 }
