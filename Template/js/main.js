@@ -150,7 +150,7 @@ dp(document).ready(function() {
 		
 		
 		dp.ajax({
-			url : 'http://templates.brightthoughtdesign.com/mailhandle/sendemail.php', 
+			url : 'http://www.brightthoughtdesign.com/access/sendemail.php', 
 			dataType:"text",
 			type: 'POST',
 			crossDomain:true,
