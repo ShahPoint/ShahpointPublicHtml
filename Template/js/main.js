@@ -123,18 +123,20 @@ dp(document).ready(function() {
 	
 	//Contact Form
 	function sentMessageAlert(result, name){
+		dp('#submit').text('SUBMIT');
+		dp('#contact-name').val('');
+		dp('#contact-email').val('');
+		dp('#contact-message').val('');
 		dp('body').append('<div class="body-shadow"><div class="message-state"><img src="Template/images/end-button.png" class="end-button"></div></div>');
-		var successMessage;
-		if(result == "success"){
-			successMessage = "Your message was sent successfully and we will respond to your message within 24 hours.";
-		}
+		var successMessage = "Your message was sent successfully and we will respond to your message within 24 hours.";
+		
 		dp('.message-state').append('<div class="message-thanks">Thank You ' + name +',</div><div class="message-results">' + successMessage + '</div>');		
 		dp('.body-shadow').fadeIn(300);
 		
 		
 		dp('body').css('overflow', 'hidden');
 		dp('body').delegate('.end-button', 'click', function(){
-			dp('.body-shadow').fadeOut(300, function(){dp(this).remove();})
+			dp('.body-shadow').fadeOut(300, function(){dp(this).remove();});
 			dp('body').css('overflow', 'auto');
 		});
 	}	
@@ -155,20 +157,17 @@ dp(document).ready(function() {
 			type: 'POST',
 			crossDomain:true,
 			data : info, 
-			success : function(result){ 
-				dp('#submit').text('SUBMIT');
-				$('#contact-name').val('');
-				$('#contact-email').val('');
-				$('#contact-message').val('');
-				sentMessageAlert(result, name);
+			success : function(result){ 				
+				
 			},
 			error : function(result){
 				$('#error').fadeIn(300).delay(10000).fadeOut(300);
 			}
 		});	
-		
+		var result = 'success';
+		sentMessageAlert(result, name);
 		return false;
-	})
+	});
 	
 	//Call to Action slide out
 	
