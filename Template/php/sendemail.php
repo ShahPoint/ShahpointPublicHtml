@@ -1,6 +1,6 @@
 <?php 
-$mailto = 'jameset1024@gmail.com';
-$subject = 'Website Contact Form';
+$mailto = 'jay.shah@shahpoint.com';
+$subject = 'ThreeSixFive Contact Form';
 function cleaner($value){
 	$badstuff = array('to:', 'cc:', 'bss:', 'content-type:', 'mime-version:', 'multipart-mixed:', 'content-transfer-encoding:');
 	
